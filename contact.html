@@ -21,6 +21,7 @@
       <!-- for on scroll animations -->
       <link rel="stylesheet" href="animate.css">
       <script src="wow.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -105,8 +106,8 @@
                               <li class="wow fadeInUp" data-wow-delay="1.6s">
                                     <label for="contact-project">Message :</label>
                                     <div class="textarea">
-                                          <textarea type="email" name="contact-project" id="contact-project" rows="6" value="" required>
-                                          </textarea>
+                                    <textarea type="email" name="contact-project" id="contact-project" rows="6" required></textarea>
+
                                     </div>
                               </li>
 
@@ -115,6 +116,14 @@
                               <button type="submit" name="contact-submit" id="contact-submit" class="send wow fadeInUp">Send Message</button>
 
                               </form>
+
+                              <div id="confirmation-modal" class="modal">
+                                    <div class="modal-content">
+                                        <p>Your message has been sent successfully!</p>
+                                    </div>
+                                </div>
+                                
+
                         </div>
                   </div>
             </div>
@@ -183,9 +192,11 @@
       </div>
 
       <!-- greensock cdn -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-
-      <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+      <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+      <script src="wow.min.js"></script>
       <script type="text/javascript">
 
       // navigation starts here
@@ -221,6 +232,47 @@
             ease: Expo.easeInOut
       }, 0.1);
 
+      // Inizializzazione di Email.js
+      $(document).ready(function() {
+      emailjs.init("Vj16ZmriXf6Dwk7yh");  // chiave utente
+      });
+
+      // Aggiungi l'evento di invio del modulo solo dopo che il documento è completamente caricato
+      $(document).ready(function () {
+      document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Ottieni i valori dei campi del modulo
+            var name = document.getElementById("contact-name").value;
+            var email = document.getElementById("contact-email").value;
+            var message = document.getElementById("contact-project").value;
+
+            // Invia l'email utilizzando Email.js
+            emailjs.send("panther_aus", "template_oz63rjc", {
+                  from_name: name,
+                  from_email: email,
+                  message: message
+            })
+            .then(
+            function (response) {
+            console.log("Email inviata con successo", response);
+            document.getElementById("confirmation-modal").style.display = "block";
+
+            setTimeout(function () {
+            document.getElementById("confirmation-modal").style.display = "none";
+            location.reload();
+            }, 3000); // 3000 millisecondi (3 secondi)
+            },
+
+            function (error) {
+            console.log("Errore nell'invio dell'email", error);
+            // Aggiungere qui eventuali azioni in caso di errore
+            }
+            );
+      });
+      });
+
+
       // nav animation ends
 
 
@@ -228,5 +280,8 @@
 
 
       </script>
+
+      
+
 </body>
 </html>
