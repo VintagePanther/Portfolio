@@ -307,7 +307,7 @@ h6 {
 }
 
 .project1 {
-  background: url(./../img/prg/logo.jpg) no-repeat 50% 50%;
+  background: url(./img/prg/logo.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 
@@ -325,7 +325,7 @@ h6 {
 }
 
 .project2 {
-  background: url(./../img/prg/graphic.jpg) no-repeat 50% 50%;
+  background: url(./img/prg/graphic.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 
@@ -343,7 +343,7 @@ h6 {
 }
 
 .project3 {
-  background: url(./../img/prg/illustration.jpg) no-repeat 50% 50%;
+  background: url(./img/prg/illustration.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 
@@ -361,7 +361,7 @@ h6 {
 }
 
 .project4 {
-  background: url(./../img/prg/text.jpg) no-repeat 50% 50%;
+  background: url(./img/prg/text.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 
@@ -379,7 +379,7 @@ h6 {
 }
 
 .project5 {
-  background: url(./../img/prg/uxui.jpg) no-repeat 50% 50%;
+  background: url(./img/prg/uxui.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 
@@ -545,7 +545,7 @@ h6 {
 }
 
 .image {
-  background: url(./../img/img-about.jpg) no-repeat 79% 14%;
+  background: url(./img/img-about.jpg) no-repeat 79% 14%;
 }
 
 /*--------------- contact form --------------- */
