@@ -22,6 +22,7 @@ html, body {
 }
 
 /*--------------- typewriter effect --------------- */
+/*--------------- effetto macchina da scrivere --------------- */
 .line {
   width: 24em;
   top: 50%;
@@ -40,32 +41,37 @@ html, body {
 
 @keyframes typewriter {
   from {
-        width: 0;
+    width: 0;
   }
   to {
-        width: 18em;
+    width: 18em;
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
+  .line {
+    width: 17em; /* Riduci la larghezza per schermi più piccoli */
+  }
+
   @keyframes typewriter {
-        from {
-              width: 0;
-        }
-        to {
-              width: 17em;
-        }
+    from {
+      width: 0;
+    }
+    to {
+      width: 17em;
+    }
   }
 }
 
 @keyframes blinkTextCussor {
   from {
-        border-right-color: rgba(255, 255, 255, 0.75);
+    border-right-color: rgba(255, 255, 255, 0.75);
   }
   to {
-        border-right-color: transparent;
+    border-right-color: transparent;
   }
 }
+
 
 /*--------------- navigation --------------- */
 nav {
