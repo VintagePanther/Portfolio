@@ -236,17 +236,44 @@ nav #menu li a:hover {
   justify-content: center;
 }
 
-.hero h1 {
+.hero span {
   font-weight: lighter;
   text-align: center;
-  letter-spacing: -2px;
+  letter-spacing: 0px;
   line-height: 58px;
 }
 
+.header {
+  width: 100%;
+  text-align: center;
+}
+
+
+.header span  {
+  font-size: 41px;
+  color:#0000;
+  background:
+  linear-gradient(-90deg,white 5px,#0000 0) 10px 0,
+  linear-gradient(white 0 0) 0 0;
+  background-size:calc(var(--n)*1ch) 200%;
+  -webkit-background-clip:padding-box,text;
+  background-clip:padding-box,text;
+  background-repeat:no-repeat;
+  animation: 
+  b .7s infinite steps(1),   
+  t calc(var(--n)*.1s) steps(var(--n)) forwards;
+}
+
+@keyframes t{
+  from {background-size:0 200%}
+}
+@keyframes b{
+  50% {background-position:0 -100%,0 0}
+}
 @media(max-width: 768px) {
-  .header h1 {
-        font-size: 26px;
-  }
+  .header span  {
+    font-size: 26px;
+  }  
 }
 
 /*--------------- scroll down icon animation --------------- */
