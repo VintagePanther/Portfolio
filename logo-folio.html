@@ -58,6 +58,13 @@
             object-fit: cover; /* Per mantenere l'aspetto dell'immagine */
             }
 
+            @media(max-width: 768px) {
+                  .mySwiper img {
+                        width: 50%;
+                        height: 50%;
+                  }
+            }
+
          </style>
 
 </head>
@@ -179,6 +186,7 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
+      autoHeight: true,
       effect: "coverflow",
       centeredSlides: true,
       slidesPerView: "auto",
