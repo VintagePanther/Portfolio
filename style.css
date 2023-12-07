@@ -312,7 +312,8 @@ nav #menu li a:hover {
 }
 
 /*--------------- projects section --------------- */
-h1 {
+
+h6 {
   text-align: center;
 }
 
@@ -740,4 +741,8 @@ textarea:focus {
 
 .next p {
   text-align: right;
+}
+
+.services{
+  text-align: center;
 }
